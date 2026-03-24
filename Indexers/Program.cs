@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 class Myarray
 {
@@ -31,7 +32,7 @@ class Myarray
             }
             else
             {
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             }
         }
         set
@@ -42,7 +43,7 @@ class Myarray
             }
             else
             {
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             }
         }
     }
@@ -52,27 +53,27 @@ class Myarray
         get
         {
             if (!int.TryParse(index, out int i))
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             if (i >= 0 && i < ar.Length)
             {
                 return ar[i];
             }
             else
             {
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             }
         }
         set
         {
             if (!int.TryParse(index, out int i))
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             if (i >= 0 && i < ar.Length)
             {
                 ar[i] = value;
             }
             else
             {
-                throw new Exception("\nНекорректный индекс! " + index);
+                throw new Exception("\nНекоректний індекс " + index);
             }
         }
     }
@@ -101,11 +102,11 @@ public class MultArray
         {
             if (r < 0 || r >= array.GetLength(0))
             {
-                throw new Exception("\nНекорректный индекс! " + r);
+                throw new Exception("\nНекоректний індекс " + r);
             }
             else if (c < 0 || c >= array.GetLength(1))
             {
-                throw new Exception("\nНекорректный индекс! " + c);
+                throw new Exception("\nНекоректний індекс " + c);
             }
             else
                 return array[r, c];
@@ -114,11 +115,11 @@ public class MultArray
         {
             if (r < 0 || r >= array.GetLength(0))
             {
-                throw new Exception("\nНекорректный индекс! " + r);
+                throw new Exception("\nНекоректний індекс " + r);
             }
             else if (c < 0 || c >= array.GetLength(1))
             {
-                throw new Exception("\nНекорректный индекс! " + c);
+                throw new Exception("\nНекоректний індекс " + c);
             }
             else
                 array[r, c] = value;
@@ -130,6 +131,8 @@ class UseArray
 {
     public static void Main()
     {
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
         Myarray ar = new(5);
         Random rnd = new();
         for (int i = 0; i < 10; i++)
